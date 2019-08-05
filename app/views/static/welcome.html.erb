@@ -1,0 +1,13 @@
+<h1>Welcome to the gossip project !</h1></br>
+<h4>You're looking for gossips? Here they are. Enjoy !</h4></br>
+<div class="card-columns">
+	<% Gossip.all.each do |gossip| %>
+		<div class="card" style="width: 25rem;">
+  		<div class="card-body">
+    	<h5 class="card-title"><%= gossip.title %></h5>
+    	<h6 class="card-subtitle mb-2 text-muted"> From: <%= gossip.user.first_name %></h6>
+    	<a <%=link_to "Gossip link", gossip_path%></a>
+  		</div>
+		</div>
+	<% end %>
+</div>	
