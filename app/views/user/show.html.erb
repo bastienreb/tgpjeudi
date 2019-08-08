@@ -1,0 +1,14 @@
+<div class="container text-center">
+  <br><br>
+  <div class="card">
+    <div class="card-header">
+      <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Age : <%= @user.age %></h5>
+      <p class="card-text">Email : <%= @user.email %></p>
+      <p class="card-text">From : <%= @user.city.name %></p>
+      <p class="card-text">Description : <%= @user.description %></p>
+      <a href=<%= gossip_index_path %> class="btn btn-primary">Back to gossips</a>
+    </div>
+</div>

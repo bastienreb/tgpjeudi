@@ -1,0 +1,22 @@
+<div class="container text-center">
+	</br>
+	<h1>Gossip n°<%= @id %> </h1><br>
+
+	<div class="card">
+   		<h4 class="card-header text-center"><%= @gossip.title%></h4>
+	    <div class="card-body">
+		    <p class="card-text"><%= @gossip.content%></p>
+		    <footer class="blockquote-footer"> <cite> <%=link_to @gossip.user.first_name, user_path(@gossip.user.id)%> from <%=link_to @city.name, city_path(@gossip.user.city.id)%></cite></footer>
+		    </br>
+					<%= link_to "Edit gossip", edit_gossip_path(@gossip.id), class: "btn btn-secondary" %>
+					<%= link_to "Delete gossip", gossip_path(@gossip.id), class: "btn btn-danger", method: :delete, data: { confirm: 'Do you really want to delete it ?' } %>
+				<a href=<%= gossip_index_path %> class="btn btn-primary">Back to gossips</a>
+	    </div>
+	    <div class="card-footer text-muted">
+	        <%= @gossip.created_at%>
+	    </div>
+	 </div>
+
+
+</div>
+

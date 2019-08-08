@@ -1,0 +1,19 @@
+<div class="container text-center">
+  </br>
+  <h1>Gossips from <%= @city.name %> (<%= @city.zip_code %>)</h1>
+  </br>
+</div>
+
+<div class="card-columns">
+  <% @city.users.each do |user| %>
+    <%user.gossips.each do |gossip|%>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= gossip.title %></h5>
+          <footer class="blockquote-footer"> <%= gossip.user.first_name %></footer></br>
+          <p><a class="btn btn-info" <%=link_to "View gossip", gossip_path(gossip.id)%></a></p>
+        </div>
+      </div>
+   <% end %>
+  <% end %>
+</div>

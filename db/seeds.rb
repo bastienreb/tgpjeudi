@@ -17,14 +17,15 @@ Tag.destroy_all
 	City.create(name: Faker::Address.city, zip_code: Faker::Address.zip_code)
  end 
 
- 10.times do 	  
-	User.create(
-		first_name: Faker::Name.first_name,
-		last_name: Faker::Name.last_name,
-		description: Faker::Quote.most_interesting_man_in_the_world,
-		email: Faker::Internet.email,
-		age: Faker::Number.between(from: 15, to: 99),
-		city: City.all.sample)
+10.times do       
+    User.create(
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        description: Faker::Quote.most_interesting_man_in_the_world,
+        email: Faker::Internet.email,
+        age: Faker::Number.between(from: 15, to: 99),
+        city: City.all.sample,
+        password: Faker::Internet.password)
  end
 
  20.times do 		

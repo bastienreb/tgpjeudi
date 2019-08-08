@@ -1,0 +1,19 @@
+<div class="container text-center">
+    <div class="form-group">
+        <br>
+        <h1>Yes, let's gossip !</h1>
+        <p>Gossip is conversation that's light, informal, and usually about other people's business. It can be fun to gossip about others, so ENJOY ! </br> (But don't forget: no one likes it when they're the subject of gossip)</p></br>
+        <%= form_tag url_for(action: 'create'), method: "post" do %>
+        <div class='form-group'>
+          <%= label_tag 'Title' %>
+          <%= text_field_tag 'title', "", class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+        <%= label_tag 'Your gossip' %>
+        <%= text_area_tag 'content', "",  class: 'form-control' %>
+    </div>
+        <%= submit_tag "Submit", class: 'btn btn-primary' %>
+        <% end %>
+    </div>
+</div>
+

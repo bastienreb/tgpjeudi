@@ -1,0 +1,19 @@
+<div class="jumbotron">
+	<div class="container text-center">
+        <h1 class="display-3">Welcome to The Gossip Project !</h1>
+         <p>Gossiping gives you the power to make other people see the world the way you do.</p>
+        <p><a class="btn btn-lg btn-primary" href=<%= new_gossip_path %> role="button">Add your gossip &raquo;</a></p>
+    </div>
+</div>
+
+<div class="card-columns">
+ 	<% @gossips.each do |gossip| %>
+ 		<div class="card">
+    	<div class="card-body">
+      	<h5 class="card-title"><%= gossip.title %></h5>
+      	<footer class="blockquote-footer"> <%= gossip.user.first_name %></footer></br>
+    		<p><a class="btn btn-info" <%=link_to "View gossip", gossip_path(gossip.id)%></a></p>
+    	</div>
+  	</div>
+  <% end %>
+</div>
